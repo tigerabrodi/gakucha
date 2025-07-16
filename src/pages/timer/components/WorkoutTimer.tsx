@@ -2,7 +2,6 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import {
-  Coffee,
   Minus,
   Pause,
   Play,
@@ -123,7 +122,6 @@ export function WorkoutTimer() {
                 variant="default"
                 className="bg-primary text-primary-foreground"
               >
-                <Coffee className="mr-1 h-3 w-3" />
                 Break Time
               </Badge>
             </div>
