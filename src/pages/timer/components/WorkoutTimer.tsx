@@ -95,7 +95,7 @@ export function WorkoutTimer() {
           state.isOnBreak ? 'ring-accent ring-2' : ''
         }`}
       >
-        <CardContent className="p-6 text-center">
+        <CardContent className="p-4 text-center">
           {/* Timer Display - Only in timer mode */}
           {state.mode === 'timer' && (
             <div className="mb-6">
@@ -158,7 +158,7 @@ export function WorkoutTimer() {
           )}
 
           {/* Main Controls - Thumb-friendly spacing */}
-          <div className="mb-6 flex justify-center gap-6">
+          <div className="flex justify-center gap-6">
             <Button
               variant="default"
               size="sm"
@@ -186,7 +186,7 @@ export function WorkoutTimer() {
       </Card>
 
       {/* Settings Controls */}
-      <Card className="bg-card border-border">
+      <Card className="bg-card border-border py-2">
         <CardContent className="p-4">
           {state.mode === 'timer' ? (
             <div>
@@ -277,7 +277,7 @@ export function WorkoutTimer() {
       </Card>
 
       {/* Break Options - Mobile optimized grid */}
-      <Card className="bg-card border-border">
+      <Card className="bg-card border-border py-2">
         <CardContent className="p-4">
           <h3 className="text-foreground mb-3 text-center text-base font-semibold">
             {state.isOnBreak ? 'Break in Progress...' : 'Break Duration'}
