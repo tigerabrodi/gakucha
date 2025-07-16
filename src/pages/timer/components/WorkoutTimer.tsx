@@ -289,11 +289,10 @@ export function WorkoutTimer() {
               <Button
                 key={option.label}
                 variant="default"
-                size="sm"
                 onClick={() =>
                   handleBreakSelected({ duration: option.duration })
                 }
-                className="flex touch-manipulation flex-col gap-1"
+                className="flex touch-manipulation gap-1"
                 disabled={state.isOnBreak || !state.isRunning}
               >
                 <span className="text-sm font-bold">{option.label}</span>
