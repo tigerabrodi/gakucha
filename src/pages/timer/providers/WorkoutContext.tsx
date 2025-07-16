@@ -176,9 +176,13 @@ export function WorkoutProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (store.isRunning || store.isOnBreak) {
       const interval = setInterval(() => {
+        // Run break timer if on break
         if (store.isOnBreak) {
           store.breakTick()
-        } else {
+        }
+
+        // Run main timer if running (and not on break in sets mode)
+        if (store.isRunning && (store.mode === 'timer' || !store.isOnBreak)) {
           store.tick()
         }
       }, ONE_SECOND_IN_MS)
