@@ -1,3 +1,4 @@
+import { getSoundEffectManager, SOUND_EFFECTS } from '@/managers/soundEffect'
 import type { ReactNode } from 'react'
 import { createContext, useContext, useEffect } from 'react'
 import { create } from 'zustand'
@@ -119,7 +120,12 @@ const useWorkoutStore = create<WorkoutStore>((set, get) => ({
     const newBreakTime = Math.max(0, state.breakTime - 1)
 
     if (newBreakTime === 0) {
-      // Break finished
+      try {
+        getSoundEffectManager().play({ type: SOUND_EFFECTS.BREAK_FINISHED })
+      } catch (error) {
+        console.error('Failed to play break finished sound:', error)
+      }
+
       set({
         isOnBreak: false,
         breakTime: 0,
