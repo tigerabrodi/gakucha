@@ -11,3 +11,16 @@ Easy to lose track of both the break time but also the amount of sets you've don
 # Why login?
 
 I wasn't sure if I'm gonna need to add more things in the future where you can configure things for yourself and personalize it more.
+
+# How to run
+
+```bash
+pnpm install
+pnpm run dev
+```
+
+And oh yeah, I'm using Convex + Convex Auth - so you'll need to set that up.
+
+# License
+
+MIT
