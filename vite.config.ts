@@ -12,6 +12,9 @@ export default defineConfig({
     tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
+      strategies: 'injectManifest', // Required for custom push logic
+      srcDir: 'src',
+      filename: 'sw.ts',
       includeAssets: ['assets/meta.png'],
       manifest: {
         name: 'Gakucha - Workout Timer',

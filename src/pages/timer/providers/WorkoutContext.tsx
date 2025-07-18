@@ -1,3 +1,4 @@
+import { getNotificationManager } from '@/managers/notificationManager'
 import { getSoundEffectManager, SOUND_EFFECTS } from '@/managers/soundEffect'
 import type { ReactNode } from 'react'
 import { createContext, useContext, useEffect } from 'react'
@@ -120,10 +121,19 @@ const useWorkoutStore = create<WorkoutStore>((set, get) => ({
     const newBreakTime = Math.max(0, state.breakTime - 1)
 
     if (newBreakTime === 0) {
+      // Break finished - play sound effect and send notification
       try {
         getSoundEffectManager().play({ type: SOUND_EFFECTS.BREAK_FINISHED })
+        getNotificationManager()
+          .sendBreakFinishedNotification()
+          .catch((error) => {
+            console.error('Failed to send break finished notification:', error)
+          })
       } catch (error) {
-        console.error('Failed to play break finished sound:', error)
+        console.error(
+          'Failed to play break finished sound or send notification:',
+          error
+        )
       }
 
       set({
