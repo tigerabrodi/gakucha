@@ -19,6 +19,7 @@ type BreakOption = {
 
 const breakOptions: Array<BreakOption> = [
   { label: 'Quick', duration: 30 },
+  { label: 'Medium', duration: 45 },
   { label: 'Normal', duration: 60 },
   { label: 'Long', duration: 90 },
   { label: 'Extended', duration: 120 },
